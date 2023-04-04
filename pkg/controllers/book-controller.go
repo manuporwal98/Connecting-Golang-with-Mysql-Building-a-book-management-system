@@ -80,7 +80,7 @@ func UpdateBook(w http.ResponseWriter, r *http.Request) {
 		bookDetails.Publication = updateBook.Publication
 	}
 	db.Save(&bookDetails)
-	res, _ := json.Marshal(bookDetails)
+	res, _ := json.Marshal(bookDetails) //marshal means we are converting into json
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 	w.Write(res)
